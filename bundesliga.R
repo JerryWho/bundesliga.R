@@ -24,7 +24,7 @@ getPoints <- function(goals.df, minute=120, team=1){
 }
 
 
-match <- data[[17]][[1]][[9]]
+match <- data[[19]][[1]][[4]]
 
 match[c('name_team1', 'name_team2')]
 goals <- match[['goals']][[1]]
