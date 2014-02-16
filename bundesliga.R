@@ -80,3 +80,5 @@ goals.df[goals.df$goal_match_minute < 80, ]
 goals.df[goals.df$goal_match_minute < 120, ]
 
 lapply(seq(from=0, to=100, by=10), FUN=function(x){getPointsAndGoals(match, x)})
+
+getPointsAndGoals(match, 30)
