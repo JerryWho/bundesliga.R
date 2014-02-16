@@ -20,9 +20,7 @@ load("data.Rda")
 
 # get the points and goals.for and goals.against for a given match from the beginning to the given minute
 getPointsAndGoals <- function(match, minute=120){
-  
-  teams.name <- match[c('name_team1', 'name_team2')]
-  
+    
   goals <- match[['goals']][[1]]
   tmp <- lapply(goals, "[", c('goal_match_minute', 'goal_score_team1', 'goal_score_team2'))
   goals.df <- ldply(tmp, data.frame)
@@ -61,7 +59,8 @@ getPointsAndGoals <- function(match, minute=120){
   result[['team2']][['goals.for']]     <- goal.at.minute$goal_score_team2
   result[['team2']][['goals.against']] <- goal.at.minute$goal_score_team1
   
-
+  result[['team1']][['name']]          <- match[c('name_team1')]
+  result[['team2']][['name']]          <- match[c('name_team2')]
   return(result)
 }
 
