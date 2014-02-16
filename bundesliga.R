@@ -65,8 +65,11 @@ getPointsAndGoals <- function(match, minute=120){
   return(result)
 }
 
+# Goal in additional time of first half
+match <- data[[1]][[1]][[9]]
 
-match <- data[[19]][[1]][[4]]
+# Goal in additional time of second half
+match <- data[[19]][[1]][[8]]
 
 match[c('name_team1', 'name_team2')]
 goals <- match[['goals']][[1]]
