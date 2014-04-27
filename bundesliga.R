@@ -82,3 +82,14 @@ goals.df[goals.df$goal_match_minute < 120, ]
 lapply(seq(from=0, to=100, by=10), FUN=function(x){getPointsAndGoals(match, x)})
 
 getPointsAndGoals(match, 30)
+
+
+ranking.df <- data.frame(team=character(),gameday=integer(), pts=integer(), goals.for=integer(), goals.against=integer())
+
+this.gameday <- 1
+this.minute <- 100
+for(this.match.nr in seq(1:9)){
+  this.match <- data[this.gameday][1][this.match.nr]  
+  result <- getPointsAndGoals(this.match, this.minute)
+  ranking.df <- rbind(ranking.df, c(this.match))
+}    
