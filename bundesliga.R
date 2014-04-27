@@ -4,7 +4,7 @@ library (plyr)
 options(stringsAsFactors=FALSE)
 
 url.template <- "http://openligadb-json.heroku.com/api/matchdata_by_group_league_saison?league_saison=2013&league_shortcut=bl1&group_order_id="
-gamedays <- seq(1:19)
+gamedays <- seq(1:32)
 
 data <- list()
 
